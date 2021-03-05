@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.XR.ARFoundation;
@@ -21,9 +22,7 @@ public class InputManager : MonoBehaviour
 
     private Pose _pose;
     private Touch _touch;
-
-
-
+    
 
 
     void Awake()
@@ -143,24 +142,7 @@ public class InputManager : MonoBehaviour
 
 
         }
-
-        bool TryGetTouchPosition(out Vector2 touchPosition)
-        {
-            if (Input.touchCount > 0)
-            {
-                _touch = Input.GetTouch(0);
-
-                touchPosition = _touch.position;
-
-                return true;
-            }
-
-            touchPosition = default;
-
-            return false;
-        }
-
-
+        
 
 
 
@@ -174,5 +156,22 @@ public class InputManager : MonoBehaviour
         }
 
 
+    }
+
+    public bool TryGetTouchPosition(out Vector2 touchPosition)
+    {
+        if (Input.touchCount > 0)
+        {
+            _touch = Input.GetTouch(0);
+
+            touchPosition = _touch.position;
+
+            return true;
+        }
+
+        touchPosition = default;
+
+        return false;
+    
     }
 }
