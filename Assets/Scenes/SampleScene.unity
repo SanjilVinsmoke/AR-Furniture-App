@@ -5691,6 +5691,7 @@ MonoBehaviour:
     type: 3}
   _buttonContainer: {fileID: 2013644261}
   _items: []
+  _label: Furnitures
 --- !u!4 &1765100336
 Transform:
   m_ObjectHideFlags: 0
